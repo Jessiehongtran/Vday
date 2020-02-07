@@ -1,0 +1,16 @@
+
+.notTodo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 20px 0 20px;
+
+    .notTodo-box {
+        border: 1px solid #353334;
+        border-radius: 14px;
+        background-color: #353334;
+        color: white;
+        padding: 10px;
+    }
+
+}

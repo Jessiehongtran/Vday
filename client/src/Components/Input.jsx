@@ -1,10 +1,12 @@
 import React from 'react';
+import '../Styles/Input.scss';
 
 class Input extends React.Component {
     constructor(props){
         super();
         this.state = {
-            task: ''
+            task: '',
+            nontask: ''
         }
     }
 
@@ -17,7 +19,14 @@ class Input extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
         console.log('task', this.state.task)
-        this.props.addTask(this.state.task)
+        console.log('nontask', this.state.nontask)
+        if (this.state.task){
+            this.props.addTask(this.state.task)
+        } else {
+        this.props.addNonTask(this.state.nontask)
+        }
+        
+        
     }
 
     render(){
@@ -25,10 +34,10 @@ class Input extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <input
                     type="text"
-                    value={this.state.task}
-                    name="task"
+                    value={this.state.task || this.state.nontask}
+                    name={this.props.name}
                     onChange={this.handleChange}
-                    placeholder="Do..."
+                    placeholder={this.props.placeholder}
                 />
             </form>
 

@@ -8,7 +8,8 @@ class Do extends React.Component {
     constructor(props){
         super();
         this.state = {
-
+            name: "task",
+            placeholder: "Do..."
         }
     }
 
@@ -19,6 +20,8 @@ class Do extends React.Component {
                 <h3>Do</h3>
                 <Input 
                     addTask = {this.props.addTask}
+                    name = {this.state.name}
+                    placeholder = {this.state.placeholder}
                 />
                 <TodoList 
                     Todo = {this.props.Todo}
