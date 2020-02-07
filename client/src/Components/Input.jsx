@@ -39,6 +39,7 @@ class Input extends React.Component {
                     onChange={this.handleChange}
                     placeholder={this.props.placeholder}
                 />
+                <button>Add</button>
             </form>
 
         )
